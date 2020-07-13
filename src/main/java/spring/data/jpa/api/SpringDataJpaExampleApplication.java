@@ -20,9 +20,11 @@ public class SpringDataJpaExampleApplication {
 			User u1 = new User(111, "x", "IT", 23);
 			User u2 = new User(675, "y", "IT", 24);
 			User u3 = new User(432, "z", "CIVIL", 26);
+			User u4 = new User(115, "f", "courier", 23);
 			repository.save(u1);
 			repository.save(u2);
 			repository.save(u3);
+			repository.save(u4);
 		};
 	}
 }

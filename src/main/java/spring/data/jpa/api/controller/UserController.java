@@ -1,10 +1,7 @@
 package spring.data.jpa.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import spring.data.jpa.api.model.User;
 import spring.data.jpa.api.service.UserService;
 
@@ -26,5 +23,15 @@ public class UserController {
         return service.getUsersByProfession(profession);
     }
 
+    @GetMapping("getUserCount/{age}")
+    public String getCountByAge(@PathVariable int age){
+        long count = service.countByAge(age);
+        return "total no of records " +count;
+    }
+
+    @DeleteMapping("/delete/{name}")
+    public void  deleteUser(@PathVariable String name) {
+        service.deleteUser(name);
+    }
 
 }

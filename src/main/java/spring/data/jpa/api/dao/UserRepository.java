@@ -9,4 +9,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     public List<User> findByProfession(String profession);
 
+    public long countByAge(int age);
+
+    public int deleteByName(String name);
+
 }

@@ -31,4 +31,12 @@ public class UserService {
     public List<User> getUsersByProfession(String profession){
         return repository.findByProfession(profession);
     }
+
+    public long countByAge(int age){
+        return repository.countByAge(age);
+    }
+
+    public int deleteUser(String name) {
+        return repository.deleteByName(name);
+    }
 }
