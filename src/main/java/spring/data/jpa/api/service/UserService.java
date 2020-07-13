@@ -36,7 +36,11 @@ public class UserService {
         return repository.countByAge(age);
     }
 
-    public int deleteUser(String name) {
-        return repository.deleteByName(name);
+    public void deleteUser(int id) {
+          repository.deleteById(id);
+    }
+
+    public void updateUser(String name, User user){
+        repository.save(user);
     }
 }

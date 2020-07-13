@@ -11,6 +11,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     public long countByAge(int age);
 
-    public int deleteByName(String name);
-
+    // multi condition
+    public List<User> findByProfessionAndAge(String profession, int age);
 }

@@ -29,9 +29,14 @@ public class UserController {
         return "total no of records " +count;
     }
 
-    @DeleteMapping("/delete/{name}")
-    public void  deleteUser(@PathVariable String name) {
-        service.deleteUser(name);
+    @DeleteMapping("/delete/{id}")
+    public void  deleteUser(@PathVariable int id) {
+        service.deleteUser(id);
+    }
+
+    @PutMapping("/update/{name}")
+    public void updateUser(@RequestBody User user, @PathVariable String name){
+        service.updateUser(name,user);
     }
 
 }
